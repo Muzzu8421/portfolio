@@ -67,7 +67,7 @@ const details = {
       ],
       github: "https://github.com/Muzzu8421/folioo",
       liveUrl: null,
-      image: null, // Add /projects/folioo.png once you have a screenshot
+      image: null, 
     },
     {
       name: "OneLink",

@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
-  title: "Shaikh Muzakkir Shaikh Ajam — Full Stack Developer",
+  title: "Shaikh Muzakkir — Portfolio",
   description:
     "Portfolio of Shaikh Muzakkir, Full Stack Developer from Hyderabad",
 };

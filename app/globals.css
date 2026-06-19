@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+/* =============================================
+   CUSTOM SCROLLBAR — globals.css
+   Matches: bg #0a0f1e · indigo-600 · orange-400
+   ============================================= */
+
+/* ── Firefox (standard spec) ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5 transparent;
+}
+
+/* ── Chrome / Safari / Edge (webkit) ── */
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; /* horizontal scrollbars, just in case */
+}
+
+/* Track — matches the site background */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Corner where horizontal + vertical meet */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Thumb — default state */
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;           /* indigo-600 */
+  border-radius: 999px;
+  border: 2px solid #0a0f1e;     /* creates a floating pill effect */
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+/* Thumb — hover state */
+::-webkit-scrollbar-thumb:hover {
+  background: #fb923c;           /* orange-400, matching your accent */
+  border-color: #0a0f1e;
+  background-clip: padding-box;
+}
+
+/* Thumb — active / dragging state */
+::-webkit-scrollbar-thumb:active {
+  background: #f97316;           /* orange-500, slightly deeper on drag */
+  border-color: #0a0f1e;
+  background-clip: padding-box;
+}

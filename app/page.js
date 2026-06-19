@@ -1,16 +1,10 @@
 import Modern from "@/components/templates/Modern";
 
-const screenshotUrl = (liveUrl) =>
-  liveUrl
-    ? `https://api.screenshotone.com/take?url=${encodeURIComponent(
-        liveUrl,
-      )}&viewport_width=1280&viewport_height=720&format=jpg&block_ads=true`
-    : null;
-
 const details = {
   personalInfo: {
     name: "Shaikh Muzakkir Shaikh Ajam",
     shortName: "Shaikh Muzakkir",
+    initials: "SM",
     title: "Full Stack Developer",
     email: "skmuzakkir750@gmail.com",
     phone: "+91 84213 26526",
@@ -54,10 +48,9 @@ const details = {
         "html2canvas",
         "Vercel",
       ],
-      github:
-        "https://github.com/Muzzu8421/freelance-invoice-generator",
+      github: "https://github.com/Muzzu8421/freelance-invoice-generator",
       liveUrl: "https://flowdoc-sepia.vercel.app",
-      image: screenshotUrl("https://flowdoc-sepia.vercel.app"),
+      image: "/projects/flowdoc.png",
     },
     {
       name: "Folioo",
@@ -74,7 +67,7 @@ const details = {
       ],
       github: "https://github.com/Muzzu8421/folioo",
       liveUrl: null,
-      image: null,
+      image: null, // Add /projects/folioo.png once you have a screenshot
     },
     {
       name: "OneLink",
@@ -90,7 +83,7 @@ const details = {
       ],
       github: "https://github.com/Muzzu8421/onelink",
       liveUrl: "https://onelink-weld-mu.vercel.app",
-      image: screenshotUrl("https://onelink-weld-mu.vercel.app"),
+      image: "/projects/onelink.png",
     },
     {
       name: "Buy Me A Chai",
@@ -107,7 +100,7 @@ const details = {
       ],
       github: "https://github.com/Muzzu8421/buy-me-a-chai",
       liveUrl: "https://buy-me-a-chai-beta.vercel.app",
-      image: screenshotUrl("https://buy-me-a-chai-beta.vercel.app"),
+      image: "/projects/buy-me-a-chai.png",
     },
   ],
   skills: {

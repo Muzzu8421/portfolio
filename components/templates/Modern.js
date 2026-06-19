@@ -244,7 +244,7 @@ export default function Modern({ details }) {
           onClick={() => handleNavigate("about")}
           className="font-[family-name:var(--font-syne)] text-sm font-bold tracking-tight text-slate-100"
         >
-          MS<span className="text-orange-400">.</span>
+          {personalInfo.initials}<span className="text-orange-400">.</span>
         </button>
         <button
           type="button"

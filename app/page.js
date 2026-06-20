@@ -1,4 +1,4 @@
-import Modern from "@/components/templates/Modern";
+import Portfolio from "@/components/Portfolio";
 
 const details = {
   personalInfo: {
@@ -168,5 +168,5 @@ const details = {
 };
 
 export default function Home() {
-  return <Modern details={details} />;
+  return <Portfolio details={details} />;
 }

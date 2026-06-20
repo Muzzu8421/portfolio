@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useState, useRef } from "react";
+import dynamic from "next/dynamic";
 
 /* ================================================================
    Icon Components
@@ -149,38 +150,14 @@ function Counter({ target, suffix = "" }) {
   );
 }
 
+
 /* ================================================================
-   Hero Animated Background (Fluid Organic 3D Shapes)
+   Hero Animated Background (Vanta.js Dots - Dynamic Import)
    ================================================================ */
 
-function HeroBackground() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-      {/* Deep base gradient to enhance 3D volumetric contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-coal/40 to-coal opacity-90" />
-      
-      {/* Large glowing core (orange/ivory) */}
-      <div className="absolute top-[5%] left-[10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] animate-float-slow">
-        <div className="w-full h-full bg-gradient-to-br from-gold/15 via-gold/5 to-transparent blur-[100px] animate-morph" />
-      </div>
-
-      {/* Secondary bright fluid shape */}
-      <div className="absolute top-[15%] right-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] animate-float-medium" style={{ animationDelay: '-5s' }}>
-        <div className="w-full h-full bg-gradient-to-tl from-bright/10 via-gold/5 to-transparent blur-[110px] animate-morph" style={{ animationDelay: '-7s' }} />
-      </div>
-
-      {/* Volumetric intersecting wave */}
-      <div className="absolute bottom-[-10%] left-[-20%] w-[80vw] h-[50vw] max-w-[1000px] max-h-[600px] animate-float-fast" style={{ animationDelay: '-10s' }}>
-        <div className="w-full h-full bg-gradient-to-tr from-gold/15 via-gold/5 to-transparent blur-[90px] animate-morph" style={{ animationDelay: '-3s' }} />
-      </div>
-      
-      {/* Intense bright highlight spot (simulates 3D specular reflection) */}
-      <div className="absolute top-[30%] left-[30%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] animate-float-slow" style={{ animationDelay: '-2s' }}>
-        <div className="w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06)_0%,rgba(255,122,0,0.02)_40%,transparent_70%)] blur-[50px] animate-morph" />
-      </div>
-    </div>
-  );
-}
+const HeroBackground = dynamic(() => import("./HeroBackground"), {
+  ssr: false,
+});
 
 /* ================================================================
    Main Portfolio Component

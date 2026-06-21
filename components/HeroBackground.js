@@ -4,13 +4,18 @@ import Script from "next/script";
 
 export default function HeroBackground() {
   const [threeReady, setThreeReady] = useState(false);
-  const [vantaReady, setVantaReady] = useState(false);
-  const [vantaEffect, setVantaEffect] = useState(null);
+  const vantaEffect = useRef(null);
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    if (!vantaEffect && vantaReady && vantaRef.current && window.VANTA) {
-      const effect = window.VANTA.DOTS({
+    return () => {
+      if (vantaEffect.current) vantaEffect.current.destroy();
+    };
+  }, []);
+
+  const initVanta = () => {
+    if (!vantaEffect.current && vantaRef.current && window.VANTA) {
+      vantaEffect.current = window.VANTA.DOTS({
         el: vantaRef.current,
         mouseControls: true,
         touchControls: true,
@@ -25,12 +30,8 @@ export default function HeroBackground() {
         size: 4.5,
         showLines: false
       });
-      setVantaEffect(effect);
     }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaReady, vantaEffect]);
+  };
 
   return (
     <>
@@ -43,7 +44,7 @@ export default function HeroBackground() {
         <Script 
           src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"
           strategy="lazyOnload"
-          onLoad={() => setVantaReady(true)}
+          onLoad={initVanta}
         />
       )}
       <div ref={vantaRef} className="absolute inset-0 z-0" />

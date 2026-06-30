@@ -66,8 +66,8 @@ const details = {
         "Tailwind CSS",
       ],
       github: "https://github.com/Muzzu8421/folioo",
-      liveUrl: null,
-      image: null, 
+      liveUrl: "https://folioo-muzzu.vercel.app/",
+      image: "/projects/folioo.png",
     },
     {
       name: "OneLink",
